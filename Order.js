@@ -5,7 +5,7 @@ export class Order {
           let aReturn = [];
           this.stateCur = this.OrderState.SIZE;
           aReturn.push("Welcome to Chatime! Let’s get started on an order for you today.");
-          aReturn.push("What size drink would you like to order: regular [+0.00], or large? [+$0.70]");
+          aReturn.push("What size drink would you like to order: regular [+0.00], or large? [+0.70]");
           return aReturn;
         },
         SIZE: (sInput) =>{
@@ -70,15 +70,15 @@ export class Order {
           }
           else if (sInput.toLowerCase().startsWith('a')){
             this.Milk = "almond",
-            this.Cost = this.Cost + 0.70;
+            this.Cost = this.Cost + 0.7;
           }
           else if (sInput.toLowerCase().startsWith('o')){
             this.Milk = "oat";
-            this.Cost = this.Cost + 0.70;
+            this.Cost = this.Cost + 0.7;
           }
           else if (sInput.toLowerCase().startsWith('s')){
             this.Milk = "soy";
-            this.Cost = this.Cost + 0.70;
+            this.Cost = this.Cost + 0.7;
           }
           else {
             this.Milk = "none";
@@ -87,29 +87,29 @@ export class Order {
           }
           aReturn.push("We have Tapioca [+0.70], Pudding [+0.70], Grass Jelly [+0.70], Sago [+0.70], Crystal Boba [+0.70] or No toppings [+0.00]?");
           return aReturn;
-        }
+        },
         TOPPING: (sInput) =>{
           let aReturn = [];
           this.stateCur = this.OrderState.SUGAR;
           if (sInput.toLowerCase().startsWith('t')){
             this.Top = "tapioca";
-            this.Cost = this.Cost + 0.70;
+            this.Cost = this.Cost + 0.7;
           }
           else if (sInput.toLowerCase().startsWith('p')){
             this.Top = "pudding";
-            this.Cost = this.Cost + 0.70;
+            this.Cost = this.Cost + 0.7;
           }
           else if (sInput.toLowerCase().startsWith('g')){
             this.Top = "grass jelly";
-            this.Cost = this.Cost + 0.70;
+            this.Cost = this.Cost + 0.7;
           }
           else if (sInput.toLowerCase().startsWith('s')){
             this.Top = "sago";
-            this.Cost = this.Cost + 0.70;
+            this.Cost = this.Cost + 0.7;
           }
           else if (sInput.toLowerCase().startsWith('c')){
             this.Top = "crystal boba";
-            this.Cost = this.Cost + 0.70;
+            this.Cost = this.Cost + 0.7;
           }
           else{
             aReturn.push("No toppings were selected. Your order will proceed with no toppings.");
@@ -208,7 +208,6 @@ export class Order {
             aReturn.push("Please pick your order at our Waterloo location at 255 King St North Unit 9");
             this.stateCur = this.OrderState.CONFIRM;
           } else if (sInput.toLowerCase().startsWith('c')) {
-            aReturn.push("To confirm your order: 1");
             aReturn.push("Please verify your order and confirm that you are ready to proceed");
           } else {
             aReturn.push("Thanks for trying out Chatime's SMS ordering system");
@@ -221,7 +220,6 @@ export class Order {
   
       this.stateCur = this.OrderState.WELCOMING;
       this.isDone = false;
-      this.sFrom = sFrom;
       this.BakeCode = false;
       this.Milk = "no";
       this.Size = "regular";
