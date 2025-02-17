@@ -3,8 +3,13 @@ export class Order {
       this.OrderState = {
         WELCOMING: () => {
           let aReturn = [];
-          this.stateCur = this.OrderState.SIZE;
+          this.stateCur = this.OrderState.ORDER;
           aReturn.push("Welcome to Chatime! Would you like get started on an order for today?");
+          return aReturn;
+        },
+        ORDER: (sInput) => {
+          let aReturn = [];
+          this.stateCur = this.OrderState.SIZE;
           if (sInput.to.LowerCase().startsWith('y')){
             aReturn.push("Sounds great!");
           }
@@ -14,6 +19,7 @@ export class Order {
           }
           return aReturn;
         },
+
         SIZE: (sInput) =>{
           let aReturn = [];
           this.stateCur = this.OrderState.DRINK;
