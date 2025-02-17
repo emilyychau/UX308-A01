@@ -190,16 +190,20 @@ export class Order {
           this.stateCur = this.OrderState.CONFIRM;
           this.isDone = true;
           if (sInput.toLowerCase().startsWith('y') || this.BakeCode){
+            aReturn.push("Thank you, your order is confirmed!");
             aReturn.push(`Your SMS order of ${this.Size} ${this.Drink} with ${this.Milk} milk, ${this.Top}, and BakeCode croissant are reserved. Your total for this order is $${this.Cost}.00`);
           }
           else if (sInput.toLowerCase().startsWith('c') || this.BakeCode){
-            aReturn.push(`You still need to confirm your SMS order of ${this.Size} ${this.Drink} with ${this.Milk} milk, ${this.Top}, and BakeCode croissant. Your total for this order is $${this.Cost}.00`);
+            aReturn.push("Your order is still unconfirmed.");
+            aReturn.push(`Please confirm your SMS order of ${this.Size} ${this.Drink} with ${this.Milk} milk, ${this.Top}, and BakeCode croissant. Your total for this order is $${this.Cost}.00`);
           }
           else if (sInput.toLowerCase().startsWith('y')){
+            aReturn.push("Thank you, your order is confirmed!");
             aReturn.push(`Your SMS order of ${this.Size} ${this.Drink} with ${this.Milk} milk, ${this.Top} is reserved. Your total for this order is $${this.Cost}.00`); 
           }
           else if (sInput.toLowerCase().startsWith('c')){
-            aReturn.push(`You still need to confirm your SMS order of ${this.Size} ${this.Drink} with ${this.Milk} milk, ${this.Top}. Your total for this order is $${this.Cost}.00`);
+            aReturn.push("Your order is still unconfirmed.");
+            aReturn.push(`Please confirm your SMS order of ${this.Size} ${this.Drink} with ${this.Milk} milk, ${this.Top}. Your total for this order is $${this.Cost}.00`);
           }
           else {
             aReturn.push("Sorry, there seems to be a problem with your order confirmation. We apologize for the inconvenience and recommend you visit our Waterloo store in-person to resolve this issue.");

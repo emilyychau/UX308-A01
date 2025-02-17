@@ -468,7 +468,7 @@ describe("Tests all stages of an order", function() {
         const aResults4 = oOrder.handleInput("crystal pearl");
         expect(aResults4[0]).toBe("What sugar level would you like?")
     });
-    it("test pearl - large matcha", function(){
+    it("test pearl topping", function(){
         const oOrder = new Order("002-028-2025");
         oOrder.handleInput("hello")
         const aResults = oOrder.handleInput("yes");
@@ -476,9 +476,9 @@ describe("Tests all stages of an order", function() {
         const aResults2 = oOrder.handleInput("matcha milk tea");
         const aResults3 = oOrder.handleInput("whole");
         const aResults4 = oOrder.handleInput("pearl");
-        expect(aResults4[0]).toBe("What sugar level would you like??")
+        expect(aResults4[0]).toBe("What sugar level would you like?")
     });
-    it("test pudding - large matcha", function(){
+    it("test pudding topping", function(){
         const oOrder = new Order("002-028-2025");
         oOrder.handleInput("hello")
         const aResults = oOrder.handleInput("yes");
@@ -486,9 +486,9 @@ describe("Tests all stages of an order", function() {
         const aResults2 = oOrder.handleInput("matcha milk tea");
         const aResults3 = oOrder.handleInput("whole");
         const aResults4 = oOrder.handleInput("pudding");
-        expect(aResults4[0]).toBe("What sugar level would you like??")
+        expect(aResults4[0]).toBe("What sugar level would you like?")
     });
-    it("test grass jelly - large matcha", function(){
+    it("test grass jelly topping", function(){
         const oOrder = new Order("002-028-2025");
         oOrder.handleInput("hello")
         const aResults = oOrder.handleInput("yes");
@@ -496,9 +496,9 @@ describe("Tests all stages of an order", function() {
         const aResults2 = oOrder.handleInput("matcha milk tea");
         const aResults3 = oOrder.handleInput("whole");
         const aResults4 = oOrder.handleInput("grass jelly");
-        expect(aResults4[0]).toBe("What sugar level would you like??")
+        expect(aResults4[0]).toBe("What sugar level would you like?")
     });
-    it("test sago - large matcha", function(){
+    it("test sago topping", function(){
         const oOrder = new Order("002-028-2025");
         oOrder.handleInput("hello")
         const aResults = oOrder.handleInput("yes");
@@ -506,9 +506,9 @@ describe("Tests all stages of an order", function() {
         const aResults2 = oOrder.handleInput("matcha milk tea");
         const aResults3 = oOrder.handleInput("whole");
         const aResults4 = oOrder.handleInput("sago");
-        expect(aResults4[0]).toBe("What sugar level would you like??")
+        expect(aResults4[0]).toBe("What sugar level would you like?")
     });
-    it("test crystal pearl - large matcha", function(){
+    it("test crystal pearl topping", function(){
         const oOrder = new Order("002-028-2025");
         oOrder.handleInput("hello")
         const aResults = oOrder.handleInput("yes");
@@ -516,8 +516,152 @@ describe("Tests all stages of an order", function() {
         const aResults2 = oOrder.handleInput("matcha milk tea");
         const aResults3 = oOrder.handleInput("whole");
         const aResults4 = oOrder.handleInput("crystal pearl");
-        expect(aResults4[0]).toBe("What sugar level would you like??")
+        expect(aResults4[0]).toBe("What sugar level would you like?")
     });
-  });
-  
-  
+    it("test 80% sugar", function(){
+        const oOrder = new Order("002-028-2025");
+        oOrder.handleInput("hello")
+        const aResults = oOrder.handleInput("yes");
+        const aResults1 = oOrder.handleInput("large");
+        const aResults2 = oOrder.handleInput("roasted milk tea");
+        const aResults3 = oOrder.handleInput("whole");
+        const aResults4 = oOrder.handleInput("pearl");
+        const aResults5 = oOrder.handleInput("80% sugar");
+        expect(aResults5[0]).toBe("Would you like to customize the ice level or temperature of your drink?")
+    });
+    it("test 50% sugar", function(){
+        const oOrder = new Order("002-028-2025");
+        oOrder.handleInput("hello")
+        const aResults = oOrder.handleInput("yes");
+        const aResults1 = oOrder.handleInput("large");
+        const aResults2 = oOrder.handleInput("roasted milk tea");
+        const aResults3 = oOrder.handleInput("whole");
+        const aResults4 = oOrder.handleInput("pudding");
+        const aResults5 = oOrder.handleInput("50% sugar");
+        expect(aResults5[0]).toBe("Would you like to customize the ice level or temperature of your drink?")
+    });
+    it("test 30% sugar", function(){
+        const oOrder = new Order("002-028-2025");
+        oOrder.handleInput("hello")
+        const aResults = oOrder.handleInput("yes");
+        const aResults1 = oOrder.handleInput("large");
+        const aResults2 = oOrder.handleInput("roasted milk tea");
+        const aResults3 = oOrder.handleInput("whole");
+        const aResults4 = oOrder.handleInput("grass jelly");
+        const aResults5 = oOrder.handleInput("30% sugar");
+        expect(aResults5[0]).toBe("Would you like to customize the ice level or temperature of your drink?")
+    });
+    it("test no sugar", function(){
+        const oOrder = new Order("002-028-2025");
+        oOrder.handleInput("hello")
+        const aResults = oOrder.handleInput("yes");
+        const aResults1 = oOrder.handleInput("large");
+        const aResults2 = oOrder.handleInput("roasted milk tea");
+        const aResults3 = oOrder.handleInput("whole");
+        const aResults4 = oOrder.handleInput("sago");
+        const aResults5 = oOrder.handleInput("0% sugar");
+        expect(aResults5[0]).toBe("Would you like to customize the ice level or temperature of your drink?")
+    });
+    it("test less ice", function(){
+        const oOrder = new Order("002-028-2025");
+        oOrder.handleInput("hello")
+        const aResults = oOrder.handleInput("yes");
+        const aResults1 = oOrder.handleInput("large");
+        const aResults2 = oOrder.handleInput("roasted milk tea");
+        const aResults3 = oOrder.handleInput("whole");
+        const aResults4 = oOrder.handleInput("pearl");
+        const aResults5 = oOrder.handleInput("80% sugar");
+        const aResults6 = oOrder.handleInput("less ice");
+        expect(aResults6[0]).toBe("Thank you for ordering today with Chatime. Before verifying the contents of your order, would you like to add a croissant?")
+    });
+    it("test no ice", function(){
+        const oOrder = new Order("002-028-2025");
+        oOrder.handleInput("hello")
+        const aResults = oOrder.handleInput("yes");
+        const aResults1 = oOrder.handleInput("large");
+        const aResults2 = oOrder.handleInput("roasted milk tea");
+        const aResults3 = oOrder.handleInput("whole");
+        const aResults4 = oOrder.handleInput("pudding");
+        const aResults5 = oOrder.handleInput("50% sugar");
+        const aResults6 = oOrder.handleInput("no ice");
+        expect(aResults6[0]).toBe("Thank you for ordering today with Chatime. Before verifying the contents of your order, would you like to add a croissant?")
+    });
+    it("test regular ice", function(){
+        const oOrder = new Order("002-028-2025");
+        oOrder.handleInput("hello")
+        const aResults = oOrder.handleInput("yes");
+        const aResults1 = oOrder.handleInput("large");
+        const aResults2 = oOrder.handleInput("roasted milk tea");
+        const aResults3 = oOrder.handleInput("whole");
+        const aResults4 = oOrder.handleInput("grass jelly");
+        const aResults5 = oOrder.handleInput("30% sugar");
+        const aResults6 = oOrder.handleInput("regular ice");
+        expect(aResults6[0]).toBe("Thank you for ordering today with Chatime. Before verifying the contents of your order, would you like to add a croissant?")
+    });
+    it("test hot drink", function(){
+        const oOrder = new Order("002-028-2025");
+        oOrder.handleInput("hello")
+        const aResults = oOrder.handleInput("yes");
+        const aResults1 = oOrder.handleInput("large");
+        const aResults2 = oOrder.handleInput("roasted milk tea");
+        const aResults3 = oOrder.handleInput("whole");
+        const aResults4 = oOrder.handleInput("sago");
+        const aResults5 = oOrder.handleInput("0% sugar");
+        const aResults6 = oOrder.handleInput("hot drink");
+        expect(aResults6[0]).toBe("Thank you for ordering today with Chatime. Before verifying the contents of your order, would you like to add a croissant?")
+    });
+    it("test w/ croissant", function(){
+        const oOrder = new Order("002-028-2025");
+        oOrder.handleInput("hello")
+        const aResults = oOrder.handleInput("yes");
+        const aResults1 = oOrder.handleInput("large");
+        const aResults2 = oOrder.handleInput("brown sugar milk tea");
+        const aResults3 = oOrder.handleInput("whole");
+        const aResults4 = oOrder.handleInput("pudding");
+        const aResults5 = oOrder.handleInput("50% sugar");
+        const aResults6 = oOrder.handleInput("no ice");
+        const aResults7 = oOrder.handleInput(true);
+        expect(aResults7[0]).toBe("Your order is ready to send. To confirm your order type 'yes', to cancel your order type 'cancel'")
+    });
+    it("test w/o croissant", function(){
+        const oOrder = new Order("002-028-2025");
+        oOrder.handleInput("hello")
+        const aResults = oOrder.handleInput("yes");
+        const aResults1 = oOrder.handleInput("large");
+        const aResults2 = oOrder.handleInput("brown sugar milk tea");
+        const aResults3 = oOrder.handleInput("whole");
+        const aResults4 = oOrder.handleInput("grass jelly");
+        const aResults5 = oOrder.handleInput("30% sugar");
+        const aResults6 = oOrder.handleInput("hot drink");
+        const aResults7 = oOrder.handleInput(false);
+        expect(aResults7[0]).toBe("Your order is ready to send. To confirm your order type 'yes', to cancel your order type 'cancel'")
+    });
+    it("test confirm Y", function(){
+        const oOrder = new Order("002-028-2025");
+        oOrder.handleInput("hello")
+        const aResults = oOrder.handleInput("yes");
+        const aResults1 = oOrder.handleInput("large");
+        const aResults2 = oOrder.handleInput("brown sugar milk tea");
+        const aResults3 = oOrder.handleInput("whole");
+        const aResults4 = oOrder.handleInput("pudding");
+        const aResults5 = oOrder.handleInput("50% sugar");
+        const aResults6 = oOrder.handleInput("no ice");
+        const aResults7 = oOrder.handleInput(true);
+        const aResults8 = oOrder.handleInput("Yes");
+        expect(aResults8[0]).toBe("Thank you, your order is confirmed!")
+    });
+    it("test confirm C", function(){
+        const oOrder = new Order("002-028-2025");
+        oOrder.handleInput("hello")
+        const aResults = oOrder.handleInput("yes");
+        const aResults1 = oOrder.handleInput("large");
+        const aResults2 = oOrder.handleInput("brown sugar milk tea");
+        const aResults3 = oOrder.handleInput("whole");
+        const aResults4 = oOrder.handleInput("pudding");
+        const aResults5 = oOrder.handleInput("50% sugar");
+        const aResults6 = oOrder.handleInput("no ice");
+        const aResults7 = oOrder.handleInput(true);
+        const aResults8 = oOrder.handleInput("Cancel");
+        expect(aResults8[0].toBe("Your order is still unconfirmed.")
+    });
+})
