@@ -10,7 +10,7 @@ export class Order {
         ORDER: (sInput) => {
           let aReturn = [];
           this.stateCur = this.OrderState.SIZE;
-          if (sInput.to.LowerCase().startsWith('y')){
+          if (sInput.toLowerCase().startsWith('y')){
             aReturn.push("Sounds great!");
           }
           else {
@@ -24,11 +24,11 @@ export class Order {
           let aReturn = [];
           this.stateCur = this.OrderState.DRINK;
           aReturn.push("What size drink would you like to order: regular [+0.00], or large [+0.70]?");
-          if (sInput.to.LowerCase().startsWith('r')){
+          if (sInput.toLowerCase().startsWith('r')){
             this.Size = "regular";
             this.Cost = this.Cost + 0;
           }
-          else if (sInput.to.LowerCase().startsWith('l')){
+          else if (sInput.toLowerCase().startsWith('l')){
             this.Size = "large";
             this.Cost = this.Cost + 0.7;
           }
