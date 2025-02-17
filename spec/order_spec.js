@@ -23,14 +23,14 @@ describe("Tests all stages of an order", function() {
         oOrder.handleInput("hello")
         const aResults = oOrder.handleInput("yes");
         const aResults1 = oOrder.handleInput("regular");
-        expect(aResults1[0]).toBe("What size drink would you like to order: regular [+0.00], or large [+0.70]?")
+        expect(aResults1[0]).toBe("Regular [+0.00] drink size selected.")
     });
     it("test size large", function(){
         const oOrder = new Order("002-028-2025");
         oOrder.handleInput("hello")
         const aResults = oOrder.handleInput("yes");
         const aResults1 = oOrder.handleInput("large");
-        expect(aResults1[0]).toBe("What size drink would you like to order: regular [+0.00], or large [+0.70]?")
+        expect(aResults1[0]).toBe("Large [+0.70] drink size selected.")
     });
     it("test drink type - regular matcha", function(){
         const oOrder = new Order("002-028-2025");

@@ -22,7 +22,7 @@ class Chat extends HTMLElement {
       this.oOrder = new Order("456-789-1023")
     }
     for(let message of aMessages){
-      this.messages.insertAdjacentHTML("beforeend", `<li class="message-item item-primary">Bot says: ${message}</li>`);
+      this.messages.insertAdjacentHTML("beforeend", `<li class="message-item item-primary">Chatime Charlie says: ${message}</li>`);
     }
     this.messages.scrollTop = this.messages.scrollHeight;
   }
