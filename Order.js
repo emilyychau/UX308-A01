@@ -17,18 +17,20 @@ export class Order {
             aReturn.push("No worries, see you soon!");
             this.isDone = true;
           }
+          aReturn.push("What size drink would you like to order: regular [+0.00], or large [+0.70]?");
           return aReturn;
         },
 
         SIZE: (sInput) =>{
           let aReturn = [];
           this.stateCur = this.OrderState.DRINK;
-          aReturn.push("What size drink would you like to order: regular [+0.00], or large [+0.70]?");
           if (sInput.toLowerCase().startsWith('r')){
+            aReturn.push("Regular [+0.00] drink size selected.");
             this.Size = "regular";
             this.Cost = this.Cost + 0;
           }
           else if (sInput.toLowerCase().startsWith('l')){
+            aReturn.push("Large [+0.70] drink size selected.");
             this.Size = "large";
             this.Cost = this.Cost + 0.7;
           }

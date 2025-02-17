@@ -10,7 +10,7 @@ describe("Tests all stages of an order", function() {
         const oOrder = new Order("002-028-2025");
         oOrder.handleInput("hello")
         const aResults = oOrder.handleInput("yes");
-        expect(aResults[0]).toBe("What size drink would you like to order: regular [+0.00], or large [+0.70]?")
+        expect(aResults[0]).toBe("Sounds great!")
     });
     it("test defer order", function() {
         const oOrder = new Order("002-028-2025");
