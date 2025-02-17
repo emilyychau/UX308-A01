@@ -4,20 +4,27 @@ export class Order {
         WELCOMING: () => {
           let aReturn = [];
           this.stateCur = this.OrderState.SIZE;
-          aReturn.push("Welcome to Chatime! Let’s get started on an order for you today.");
-          aReturn.push("What size drink would you like to order: regular [+0.00], or large? [+0.70]");
+          aReturn.push("Welcome to Chatime! Would you like get started on an order for today?");
+          if (sInput.to.LowerCase().startsWith('y')){
+            aReturn.push("Sounds great!");
+          }
+          else {
+            aReturn.push("No worries, see you soon!");
+            this.isDone = true;
+          }
           return aReturn;
         },
         SIZE: (sInput) =>{
           let aReturn = [];
           this.stateCur = this.OrderState.DRINK;
+          aReturn.push("What size drink would you like to order: regular [+0.00], or large? [+0.70]");
           if (sInput.to.LowerCase().startsWith('r')){
             this.Size = "regular";
             this.Cost = this.Cost + 0;
           }
-          else if (sInput.to.LowerCase().startsWith('r')){
+          else if (sInput.to.LowerCase().startsWith('l')){
             this.Size = "large";
-            this.Cost = this.Cost + 0.70;
+            this.Cost = this.Cost + 0.7;
           }
           else {
             aReturn.push("Sorry, that's not a menu option. Your order will proceed as a regular sized milk tea.");
