@@ -45,26 +45,32 @@ export class Order {
           let aReturn = [];
           this.stateCur = this.OrderState.MILK;
           if (sInput.toLowerCase().startsWith('r')){
+            aReturn.push("Roasted milk tea selected.");
             this.Drink = "Roasted Milk Tea";
             this.Cost = this.Cost + 6;
           }
           else if (sInput.toLowerCase().startsWith('t')){
+            aReturn.push("Taro milk tea selected");
             this.Drink = "Taro Milk Tea";
             this.Cost = this.Cost + 6;
           }
           else if (sInput.toLowerCase().startsWith('e')){
+            aReturn.push("Earl grey milk tea selected.");
             this.Drink = "Earl Grey Milk Tea";
             this.Cost = this.Cost + 6;
           }
           else if (sInput.toLowerCase().startsWith('m')){
+            aReturn.push("Matcha milk tea selected.");
             this.Drink = "Matcha Milk Tea";
             this.Cost = this.Cost + 6;
           }
           else if (sInput.toLowerCase().startsWith('b')){
+            aReturn.push("Brown sugar milk tea selected.");
             this.Drink = "Brown Sugar Milk Tea";
             this.Cost = this.Cost + 7;
           }
           else if (sInput.toLowerCase().startsWith('j')){
+            aReturn.push("Jasmine jade milk tea selected.");
             this.Drink = "Jasmine Jade Milk Tea";
             this.Cost = this.Cost + 6;
           }
@@ -79,18 +85,22 @@ export class Order {
           let aReturn = [];
           this.stateCur = this.OrderState.TOPPING;
           if (sInput.toLowerCase().startsWith('w')){
+            aReturn.push("Whole milk option selected.");
             this.Milk = "whole",
             this.Cost = this.Cost + 0;
           }
           else if (sInput.toLowerCase().startsWith('a')){
+            aReturn.push("Almond milk option selected.");
             this.Milk = "almond",
             this.Cost = this.Cost + 0.7;
           }
           else if (sInput.toLowerCase().startsWith('o')){
+            aReturn.push("Oat milk option selected.");
             this.Milk = "oat";
             this.Cost = this.Cost + 0.7;
           }
           else if (sInput.toLowerCase().startsWith('s')){
+            aReturn.push("Soy milk option selected.");
             this.Milk = "soy";
             this.Cost = this.Cost + 0.7;
           }
@@ -100,30 +110,35 @@ export class Order {
             aReturn.push("Sorry that's not a possible dairy or dairy alternative option. Your order will proceed with no dairy.");
           }
           aReturn.push("What toppings would you like to add?");
-          aReturn.push("We have Tapioca [+0.70], Pudding [+0.70], Grass Jelly [+0.70], Sago [+0.70], Crystal Boba [+0.70] or No toppings [+0.00]?");
+          aReturn.push("We have Tapioca [+0.70], Pudding [+0.70], Grass Jelly [+0.70], Sago [+0.70], Crystal Pearl [+0.70] or No toppings [+0.00]?");
           return aReturn;
         },
         TOPPING: (sInput) =>{
           let aReturn = [];
           this.stateCur = this.OrderState.SUGAR;
           if (sInput.toLowerCase().startsWith('t')){
+            aReturn.push("Tapioca topping selected.");
             this.Top = "tapioca";
             this.Cost = this.Cost + 0.7;
           }
           else if (sInput.toLowerCase().startsWith('p')){
+            aReturn.push("Pudding topping selected.");
             this.Top = "pudding";
             this.Cost = this.Cost + 0.7;
           }
           else if (sInput.toLowerCase().startsWith('g')){
+            aReturn.push("Grass jelly topping selected.");
             this.Top = "grass jelly";
             this.Cost = this.Cost + 0.7;
           }
           else if (sInput.toLowerCase().startsWith('s')){
+            aReturn.push("Sago topping selected.");
             this.Top = "sago";
             this.Cost = this.Cost + 0.7;
           }
           else if (sInput.toLowerCase().startsWith('c')){
-            this.Top = "crystal boba";
+            aReturn.push("Crystal pearl topping selected.");
+            this.Top = "crystal pearl";
             this.Cost = this.Cost + 0.7;
           }
           else{
@@ -137,15 +152,19 @@ export class Order {
           let aReturn = [];
           this.stateCur = this.OrderState.ICE;
           if(sInput.startsWith('8')){
+            aReturn.push("80% sugar level selected.");
             this.Sugar = "80% sugar";
           }
           else if (sInput.startsWith('5')){
+            aReturn.push("50% sugar level selected.");
             this.Sugar = "50% sugar";
           }
           else if (sInput.startsWith('3')){
+            aReturn.push("30% sugar level selected.");
             this.Sugar = "30% sugar";
           }
           else if (sInput.toLowerCase().startsWith('0') || sInput.toLowerCase().startsWith('z')){
+            aReturn.push("0% sugar level selected.");
             this.Sugar = "0% sugar";
           }
           else {
@@ -160,12 +179,15 @@ export class Order {
           let aReturn = [];
           this.stateCur = this.OrderState.FINALIZE;
           if (sInput.toLowerCase().startsWith('l')){
+            aReturn.push("Less ice selected.");
             this.Ice = "Less ice";
           }
           else if (sInput.toLowerCase().startsWith('n')){
+            aReturn.push("No ice selected.");
             this.Ice = "No ice";
           }
           else if (sInput.toLowerCase().startsWith('h')){
+            aReturn.push("Hot drink selected.");
             this.Ice = "Hot drink";
           }
           else {
@@ -198,12 +220,12 @@ export class Order {
           this.isDone = true;
           if (sInput.toLowerCase().startsWith('y') || this.BakeCode == true){
             aReturn.push("Thank you, your order is confirmed!");
-            aReturn.push(`Your SMS order of ${this.Size} ${this.Drink} with ${this.Milk} milk, ${this.Top}, and BakeCode croissant are reserved. Your total for this order is $${this.Cost}.00`);
+            aReturn.push(`Your SMS order of ${this.Size} ${this.Drink} with ${this.Milk} milk, ${this.Top}, and BakeCode croissant are reserved. Your total for this order is $${this.Cost}`);
             aReturn.push("This is a confirmation of your order number: 002-028-2025. Press 'Y' to acknowledge this message.")
           }
           else if (sInput.toLowerCase().startsWith('c') || this.BakeCode == true){
             aReturn.push("Your order is still unconfirmed.");
-            aReturn.push(`Please confirm your SMS order of ${this.Size} ${this.Drink} with ${this.Milk} milk, ${this.Top}, and BakeCode croissant. Your total for this order is $${this.Cost}.00`);
+            aReturn.push(`Please confirm your SMS order of ${this.Size} ${this.Drink} with ${this.Milk} milk, ${this.Top}, and BakeCode croissant. Your total for this order is $${this.Cost}`);
             aReturn.push("Reply with 'Verify' to confirm your order.");
           }
           else if (sInput.toLowerCase().startsWith('y') || this.BakeCode == false){
@@ -218,8 +240,7 @@ export class Order {
           }
           else {
             aReturn.push("Sorry, there seems to be a problem with your order confirmation. We apologize for the inconvenience and recommend you visit our Waterloo store in-person to resolve this issue.");
-            aReturn.push("The address for our Waterloo location is 255 King St North Unit 9");
-            this.isDone = true;
+            aReturn.push("The address for our Waterloo location is 255 King St North Unit 9.");
           }
           return aReturn;
         },
