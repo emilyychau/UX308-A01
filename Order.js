@@ -250,18 +250,15 @@ export class Order {
             aReturn.push("Your order will be ready for pick up in approximately 10 minutes.");
             aReturn.push("Please pick your order at our Waterloo location at 255 King St North Unit 9");
             this.stateCur = this.OrderState.CONFIRM;
-            this.isDone = true;
           } 
           else if (sInput.toLowerCase().startsWith('v')) {
             aReturn.push("Your order is confirmed and you are ready to proceed.");
             aReturn.push("This is a confirmation of your order number: 002-028-2025.");
-            this.isDone = true;
           } 
           else {
             aReturn.push("Thanks for trying out Chatime's SMS ordering system");
             aReturn.push("You can also order in person at our Waterloo location at 255 King St North Unit 9");
             aReturn.push("We'll see you next time")
-            this.isDone = true;
           }
           return aReturn;
         },
