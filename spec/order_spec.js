@@ -4,7 +4,7 @@ describe("Tests all stages of an order", function() {
     it("test hello", function() {
         const oOrder = new Order("002-028-2025");
         const aResults = oOrder.handleInput("hello");
-        expect(aResults[0]).toBe("Welcome to Chatime! Let’s get started on an order for you today.")
+        expect(aResults[0]).toBe("Welcome to Chatime! Would you like get started on an order for today?")
     });
     it("test start order", function() {
         const oOrder = new Order("002-028-2025");
@@ -23,14 +23,14 @@ describe("Tests all stages of an order", function() {
         oOrder.handleInput("hello")
         const aResults = oOrder.handleInput("yes");
         const aResults1 = oOrder.handleInput("regular");
-        expect(aResults1[0]).toBe("Which drink would you like?")
+        expect(aResults1[0]).toBe("What size drink would you like to order: regular [+0.00], or large [+0.70]?")
     });
     it("test size large", function(){
         const oOrder = new Order("002-028-2025");
         oOrder.handleInput("hello")
         const aResults = oOrder.handleInput("yes");
         const aResults1 = oOrder.handleInput("large");
-        expect(aResults1[0]).toBe("Which drink would you like?")
+        expect(aResults1[0]).toBe("What size drink would you like to order: regular [+0.00], or large [+0.70]?")
     });
     it("test drink type - regular matcha", function(){
         const oOrder = new Order("002-028-2025");
@@ -328,7 +328,7 @@ describe("Tests all stages of an order", function() {
         const aResults4 = oOrder.handleInput("grass jelly");
         const aResults5 = oOrder.handleInput("30% sugar");
         const aResults6 = oOrder.handleInput("regular ice");
-        expect(aResults6[0]).toBe("Thank you for ordering today with Chatime. Before verifying the contents of your order, would you like to add a croissant?")
+        expect(aResults6[0]).toBe("Your order will proceed with the regular level of ice.")
     });
     it("test hot drink", function(){
         const oOrder = new Order("002-028-2025");
