@@ -17,7 +17,7 @@ export class Order {
         SIZE: (sInput) =>{
           let aReturn = [];
           this.stateCur = this.OrderState.DRINK;
-          aReturn.push("What size drink would you like to order: regular [+0.00], or large? [+0.70]");
+          aReturn.push("What size drink would you like to order: regular [+0.00], or large [+0.70]?");
           if (sInput.to.LowerCase().startsWith('r')){
             this.Size = "regular";
             this.Cost = this.Cost + 0;
