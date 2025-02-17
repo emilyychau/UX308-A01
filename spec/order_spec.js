@@ -207,7 +207,7 @@ describe("Tests all stages of an order", function() {
         const aResults1 = oOrder.handleInput("large");
         const aResults2 = oOrder.handleInput("matcha milk tea");
         const aResults3 = oOrder.handleInput("whole");
-        const aResults4 = oOrder.handleInput("pearl");
+        const aResults4 = oOrder.handleInput("tapioca");
         expect(aResults4[0]).toBe("Tapioca topping selected.")
     });
     it("test pudding topping", function(){
