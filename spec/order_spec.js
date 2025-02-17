@@ -304,7 +304,7 @@ describe("Tests all stages of an order", function() {
         const aResults4 = oOrder.handleInput("pearl");
         const aResults5 = oOrder.handleInput("80% sugar");
         const aResults6 = oOrder.handleInput("less ice");
-        expect(aResults6[0]).toBe("Thank you for ordering today with Chatime. Before verifying the contents of your order, would you like to add a croissant?")
+        expect(aResults6[0]).toBe("Thanks for ordering today! Would you like to add a BakeCode croissant?")
     });
     it("test no ice", function(){
         const oOrder = new Order("002-028-2025");
@@ -316,7 +316,7 @@ describe("Tests all stages of an order", function() {
         const aResults4 = oOrder.handleInput("pudding");
         const aResults5 = oOrder.handleInput("50% sugar");
         const aResults6 = oOrder.handleInput("no ice");
-        expect(aResults6[0]).toBe("Thank you for ordering today with Chatime. Before verifying the contents of your order, would you like to add a croissant?")
+        expect(aResults6[0]).toBe("Thanks for ordering today! Would you like to add a BakeCode croissant?")
     });
     it("test regular ice", function(){
         const oOrder = new Order("002-028-2025");
@@ -340,7 +340,7 @@ describe("Tests all stages of an order", function() {
         const aResults4 = oOrder.handleInput("sago");
         const aResults5 = oOrder.handleInput("0% sugar");
         const aResults6 = oOrder.handleInput("hot drink");
-        expect(aResults6[0]).toBe("Thank you for ordering today with Chatime. Before verifying the contents of your order, would you like to add a croissant?")
+        expect(aResults6[0]).toBe("Thanks for ordering today! Would you like to add a BakeCode croissant?")
     });
     it("test w/ croissant", function(){
         const oOrder = new Order("002-028-2025");

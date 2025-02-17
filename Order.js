@@ -172,7 +172,7 @@ export class Order {
               this.Ice = "Regular ice";
               aReturn.push("Your order will proceed with the regular level of ice.");
           }
-          aReturn.push("Thanks for ordering today! Would you like to add a croissant?");
+          aReturn.push("Thanks for ordering today! Would you like to add a BakeCode croissant?");
           return aReturn;
         },
         FINALIZE: (sInput) =>{
