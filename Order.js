@@ -92,6 +92,7 @@ export class Order {
             this.Cost = this.Cost + 0;
             aReturn.push("Sorry that's not a possible dairy or dairy alternative option. Your order will proceed with no dairy.");
           }
+          aReturn.push("What toppings would you like to add?");
           aReturn.push("We have Tapioca [+0.70], Pudding [+0.70], Grass Jelly [+0.70], Sago [+0.70], Crystal Boba [+0.70] or No toppings [+0.00]?");
           return aReturn;
         },
