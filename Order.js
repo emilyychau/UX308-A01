@@ -203,12 +203,12 @@ export class Order {
           if (sInput.toLowerCase().startsWith('y')){
             this.BakeCode = true;
             this.Cost = this.Cost + 5;
-            aReturn.push("Thank you, your order is confirmed!");
+            aReturn.push("Thank you, proceeding with your order confirmation.");
           }
           else if (sInput.toLowerCase().startsWith('n')){
             this.BakeCode = false;
             this.Cost = this.Cost + 0;
-            aReturn.push("Your order is still unconfirmed.");
+            aReturn.push("Thank you, proceeding with your order confirmation.");
           }
           else {
             aReturn.push("Sorry that's not a valid response. Your order will proceed with no croissant add-ons.");
@@ -219,7 +219,6 @@ export class Order {
         RESERVING: (sInput) => {
           let aReturn = [];
           this.stateCur = this.OrderState.CONFIRM;
-          this.isDone = true;
           if (sInput.toLowerCase().startsWith('y') || this.BakeCode == true){
             aReturn.push(`Your SMS order of ${this.Size} ${this.Drink} with ${this.Milk} milk, ${this.Top}, and a BakeCode croissant are reserved. Your total for this order is $${this.Cost}0`);
             aReturn.push("This is a confirmation of your order number: 002-028-2025. Press 'Y' to acknowledge this message.")
@@ -244,6 +243,7 @@ export class Order {
         },
         CONFIRM: (sInput) => {
           let aReturn = [];
+          this.isDone = true;
           if (sInput.toLowerCase().startsWith('y')) {
             aReturn.push("Your order will be ready for pick up in approximately 10 minutes.");
             aReturn.push("Please pick your order at our Waterloo location at 255 King St North Unit 9");

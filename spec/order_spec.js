@@ -353,7 +353,7 @@ describe("Tests all stages of an order", function() {
         const aResults5 = oOrder.handleInput("50% sugar");
         const aResults6 = oOrder.handleInput("no ice");
         const aResults7 = oOrder.handleInput("Yes");
-        expect(aResults7[0]).toBe("Thank you, your order is confirmed!")
+        expect(aResults7[0]).toBe("Thank you, proceeding with your order confirmation.")
     });
     it("test w/o croissant", function(){
         const oOrder = new Order("002-028-2025");
@@ -366,7 +366,7 @@ describe("Tests all stages of an order", function() {
         const aResults5 = oOrder.handleInput("30% sugar");
         const aResults6 = oOrder.handleInput("hot drink");
         const aResults7 = oOrder.handleInput("No");
-        expect(aResults7[0]).toBe("Your order is still unconfirmed.")
+        expect(aResults7[0]).toBe("Thank you, proceeding with your order confirmation.")
     });
     it("test confirm Y", function(){
         const oOrder = new Order("002-028-2025");
