@@ -32,7 +32,7 @@ export class Order {
           else if (sInput.toLowerCase().startsWith('l')){
             aReturn.push("Large [+0.70] drink size selected.");
             this.Size = "large";
-            this.Cost = this.Cost + 0.7;
+            this.Cost = this.Cost + 0.70;
           }
           else {
             aReturn.push("Sorry, that's not a menu option. Your order will proceed as a regular sized milk tea.");
@@ -87,26 +87,26 @@ export class Order {
           if (sInput.toLowerCase().startsWith('w')){
             aReturn.push("Whole milk option selected.");
             this.Milk = "whole",
-            this.Cost = this.Cost + 0;
+            this.Cost = this.Cost + 0.00;
           }
           else if (sInput.toLowerCase().startsWith('a')){
             aReturn.push("Almond milk option selected.");
             this.Milk = "almond",
-            this.Cost = this.Cost + 0.7;
+            this.Cost = this.Cost + 0.70;
           }
           else if (sInput.toLowerCase().startsWith('o')){
             aReturn.push("Oat milk option selected.");
             this.Milk = "oat";
-            this.Cost = this.Cost + 0.7;
+            this.Cost = this.Cost + 0.70;
           }
           else if (sInput.toLowerCase().startsWith('s')){
             aReturn.push("Soy milk option selected.");
             this.Milk = "soy";
-            this.Cost = this.Cost + 0.7;
+            this.Cost = this.Cost + 0.70;
           }
           else {
             this.Milk = "none";
-            this.Cost = this.Cost + 0;
+            this.Cost = this.Cost + 0.00;
             aReturn.push("Sorry that's not a possible dairy or dairy alternative option. Your order will proceed with no dairy.");
           }
           aReturn.push("What toppings would you like to add?");
@@ -119,27 +119,27 @@ export class Order {
           if (sInput.toLowerCase().startsWith('t')){
             aReturn.push("Tapioca topping selected.");
             this.Top = "tapioca";
-            this.Cost = this.Cost + 0.7;
+            this.Cost = this.Cost + 0.70;
           }
           else if (sInput.toLowerCase().startsWith('p')){
             aReturn.push("Pudding topping selected.");
             this.Top = "pudding";
-            this.Cost = this.Cost + 0.7;
+            this.Cost = this.Cost + 0.70;
           }
           else if (sInput.toLowerCase().startsWith('g')){
             aReturn.push("Grass jelly topping selected.");
             this.Top = "grass jelly";
-            this.Cost = this.Cost + 0.7;
+            this.Cost = this.Cost + 0.70;
           }
           else if (sInput.toLowerCase().startsWith('s')){
             aReturn.push("Sago topping selected.");
             this.Top = "sago";
-            this.Cost = this.Cost + 0.7;
+            this.Cost = this.Cost + 0.70;
           }
           else if (sInput.toLowerCase().startsWith('c')){
             aReturn.push("Crystal pearl topping selected.");
             this.Top = "crystal pearl";
-            this.Cost = this.Cost + 0.7;
+            this.Cost = this.Cost + 0.70;
           }
           else{
             aReturn.push("No toppings were selected. Your order will proceed with no toppings.");
@@ -220,12 +220,12 @@ export class Order {
           this.isDone = true;
           if (sInput.toLowerCase().startsWith('y') || this.BakeCode == true){
             aReturn.push("Thank you, your order is confirmed!");
-            aReturn.push(`Your SMS order of ${this.Size} ${this.Drink} with ${this.Milk} milk, ${this.Top}, and BakeCode croissant are reserved. Your total for this order is $${this.Cost}`);
+            aReturn.push(`Your SMS order of ${this.Size} ${this.Drink} with ${this.Milk} milk, ${this.Top}, and a BakeCode croissant are reserved. Your total for this order is $${this.Cost}`);
             aReturn.push("This is a confirmation of your order number: 002-028-2025. Press 'Y' to acknowledge this message.")
           }
           else if (sInput.toLowerCase().startsWith('n') || this.BakeCode == true){
             aReturn.push("Your order is still unconfirmed.");
-            aReturn.push(`Please confirm your SMS order of ${this.Size} ${this.Drink} with ${this.Milk} milk, ${this.Top}, and BakeCode croissant. Your total for this order is $${this.Cost}`);
+            aReturn.push(`Please confirm your SMS order of ${this.Size} ${this.Drink} with ${this.Milk} milk, ${this.Top}, and a BakeCode croissant. Your total for this order is $${this.Cost}`);
             aReturn.push("Reply with 'Verify' to confirm your order.");
           }
           else if (sInput.toLowerCase().startsWith('y') || this.BakeCode == false){
