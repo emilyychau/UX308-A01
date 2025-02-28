@@ -211,7 +211,7 @@ export class Order {
           else {
             aReturn.push("Sorry that's not a valid response. Your order will proceed with no croissant add-ons.");
           }
-          aReturn.push("Your order is ready to send. To confirm your order type 'yes', to cancel your order type 'cancel'");
+          aReturn.push("Your order is ready to send. To confirm your order type 'yes', to cancel your order type 'no'");
           return aReturn;
         },
         RESERVING: (sInput) => {
@@ -223,7 +223,7 @@ export class Order {
             aReturn.push(`Your SMS order of ${this.Size} ${this.Drink} with ${this.Milk} milk, ${this.Top}, and BakeCode croissant are reserved. Your total for this order is $${this.Cost}`);
             aReturn.push("This is a confirmation of your order number: 002-028-2025. Press 'Y' to acknowledge this message.")
           }
-          else if (sInput.toLowerCase().startsWith('c') || this.BakeCode == true){
+          else if (sInput.toLowerCase().startsWith('n') || this.BakeCode == true){
             aReturn.push("Your order is still unconfirmed.");
             aReturn.push(`Please confirm your SMS order of ${this.Size} ${this.Drink} with ${this.Milk} milk, ${this.Top}, and BakeCode croissant. Your total for this order is $${this.Cost}`);
             aReturn.push("Reply with 'Verify' to confirm your order.");
@@ -233,7 +233,7 @@ export class Order {
             aReturn.push(`Your SMS order of ${this.Size} ${this.Drink} with ${this.Milk} milk, ${this.Top} is reserved. Your total for this order is $${this.Cost}`); 
             aReturn.push("This is a confirmation of your order number: 002-028-2025. Press 'Y' to acknowledge this message.");
           }
-          else if (sInput.toLowerCase().startsWith('c') || this.BakeCode == false){
+          else if (sInput.toLowerCase().startsWith('n') || this.BakeCode == false){
             aReturn.push("Your order is still unconfirmed.");
             aReturn.push(`Please confirm your SMS order of ${this.Size} ${this.Drink} with ${this.Milk} milk, ${this.Top}. Your total for this order is $${this.Cost}`);
             aReturn.push("Reply with 'Verify' to confirm your order.");
@@ -251,7 +251,7 @@ export class Order {
             aReturn.push("Please pick your order at our Waterloo location at 255 King St North Unit 9");
             this.stateCur = this.OrderState.CONFIRM;
           } 
-          else if (sInput.toLowerCase().startsWith('v')) {
+          else if (sInput.toLowerCase().startsWith('n')) {
             aReturn.push("Your order is confirmed and you are ready to proceed.");
             aReturn.push("This is a confirmation of your order number: 002-028-2025.");
           } 
