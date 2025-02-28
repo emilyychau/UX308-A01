@@ -12,12 +12,12 @@ export class Order {
           this.stateCur = this.OrderState.SIZE;
           if (sInput.toLowerCase().startsWith('y')){
             aReturn.push("Sounds great!");
+            aReturn.push("What size drink would you like to order: regular [+0.00], or large [+0.70]?");
           }
           else {
             aReturn.push("No worries, see you soon!");
             this.isDone = true;
           }
-          aReturn.push("What size drink would you like to order: regular [+0.00], or large [+0.70]?");
           return aReturn;
         },
 
@@ -194,7 +194,7 @@ export class Order {
               this.Ice = "Regular ice";
               aReturn.push("Your order will proceed with the regular level of ice.");
           }
-          aReturn.push("Thanks for ordering today! Would you like to add a BakeCode croissant?");
+          aReturn.push("Thanks for ordering today! Would you like to add a BakeCode croissant for $5.00?");
           return aReturn;
         },
         FINALIZE: (sInput) =>{
@@ -203,10 +203,12 @@ export class Order {
           if (sInput.toLowerCase().startsWith('y')){
             this.BakeCode = true;
             this.Cost = this.Cost + 5;
+            aReturn.push("Thank you, your order is confirmed!");
           }
           else if (sInput.toLowerCase().startsWith('n')){
             this.BakeCode = false;
             this.Cost = this.Cost + 0;
+            aReturn.push("Your order is still unconfirmed.");
           }
           else {
             aReturn.push("Sorry that's not a valid response. Your order will proceed with no croissant add-ons.");
@@ -219,22 +221,18 @@ export class Order {
           this.stateCur = this.OrderState.CONFIRM;
           this.isDone = true;
           if (sInput.toLowerCase().startsWith('y') || this.BakeCode == true){
-            aReturn.push("Thank you, your order is confirmed!");
             aReturn.push(`Your SMS order of ${this.Size} ${this.Drink} with ${this.Milk} milk, ${this.Top}, and a BakeCode croissant are reserved. Your total for this order is $${this.Cost}`);
             aReturn.push("This is a confirmation of your order number: 002-028-2025. Press 'Y' to acknowledge this message.")
           }
           else if (sInput.toLowerCase().startsWith('n') || this.BakeCode == true){
-            aReturn.push("Your order is still unconfirmed.");
             aReturn.push(`Please confirm your SMS order of ${this.Size} ${this.Drink} with ${this.Milk} milk, ${this.Top}, and a BakeCode croissant. Your total for this order is $${this.Cost}`);
             aReturn.push("Reply with 'Verify' to confirm your order.");
           }
           else if (sInput.toLowerCase().startsWith('y') || this.BakeCode == false){
-            aReturn.push("Thank you, your order is confirmed!");
             aReturn.push(`Your SMS order of ${this.Size} ${this.Drink} with ${this.Milk} milk, ${this.Top} is reserved. Your total for this order is $${this.Cost}`); 
             aReturn.push("This is a confirmation of your order number: 002-028-2025. Press 'Y' to acknowledge this message.");
           }
           else if (sInput.toLowerCase().startsWith('n') || this.BakeCode == false){
-            aReturn.push("Your order is still unconfirmed.");
             aReturn.push(`Please confirm your SMS order of ${this.Size} ${this.Drink} with ${this.Milk} milk, ${this.Top}. Your total for this order is $${this.Cost}`);
             aReturn.push("Reply with 'Verify' to confirm your order.");
           }
