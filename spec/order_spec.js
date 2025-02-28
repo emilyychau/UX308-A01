@@ -353,7 +353,7 @@ describe("Tests all stages of an order", function() {
         const aResults5 = oOrder.handleInput("50% sugar");
         const aResults6 = oOrder.handleInput("no ice");
         const aResults7 = oOrder.handleInput("Yes");
-        expect(aResults7[0]).toBe("Your order is ready to send. To confirm your order type 'yes', to cancel your order type 'no'")
+        expect(aResults7[0]).toBe("Thank you, your order is confirmed!'")
     });
     it("test w/o croissant", function(){
         const oOrder = new Order("002-028-2025");
@@ -366,8 +366,7 @@ describe("Tests all stages of an order", function() {
         const aResults5 = oOrder.handleInput("30% sugar");
         const aResults6 = oOrder.handleInput("hot drink");
         const aResults7 = oOrder.handleInput("No");
-        expect(aResults7[0]).toBe("Your order is ready to send. To confirm your order type 'yes', to cancel your order type 'no'")
-    });
+        expect(aResults7[0]).toBe("Your order is still unconfirmed.");
     it("test confirm Y", function(){
         const oOrder = new Order("002-028-2025");
         oOrder.handleInput("hello")
@@ -380,7 +379,7 @@ describe("Tests all stages of an order", function() {
         const aResults6 = oOrder.handleInput("no ice");
         const aResults7 = oOrder.handleInput("Yes");
         const aResults8 = oOrder.handleInput("Yes");
-        expect(aResults8[0]).toBe("Thank you, your order is confirmed!")
+        expect(aResults8[0]).toBe("Your SMS order of large Brown Sugar Milk Tea with whole milk, pudding, and a BakeCode croissant are reserved. Your total for this order is $13.40!");
     });
     it("test confirm C", function(){
         const oOrder = new Order("002-028-2025");
@@ -394,7 +393,7 @@ describe("Tests all stages of an order", function() {
         const aResults6 = oOrder.handleInput("no ice");
         const aResults7 = oOrder.handleInput("No");
         const aResults8 = oOrder.handleInput("No");
-        expect(aResults8[0]).toBe("Your order is still unconfirmed.")
+        expect(aResults8[0]).toBe("Please confirm your SMS order of large Brown Sugar Milk Tea with whole milk, pudding, and a BakeCode croissant. Your total for this order is $8.40");
     });
     it("test confirm order p/u", function(){
         const oOrder = new Order("002-028-2025");
