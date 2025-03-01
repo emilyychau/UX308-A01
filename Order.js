@@ -155,7 +155,7 @@ export class Order {
             aReturn.push("80% sugar level selected.");
             this.Sugar = "80% sugar";
           }
-          else if (sInput.startsWith('5')){
+          else if (sInput.startsWith('5')|| sInput.toLowerCase().startsWith('h')){
             aReturn.push("50% sugar level selected.");
             this.Sugar = "50% sugar";
           }
