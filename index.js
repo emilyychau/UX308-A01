@@ -69,12 +69,14 @@ class Chat extends HTMLElement {
 .chat${suffix} .item-primary {
   color: #3c3c3e;
   margin-right: 2em;
+  font-size: 1em;
 }
 
 .chat${suffix} .item-secondary {
   background-color: #521c6d;
   color: #fff;
   margin-left: 2em;
+  font-size: 1em;
 }
 
 /* messages input */
