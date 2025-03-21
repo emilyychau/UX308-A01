@@ -35,7 +35,7 @@ class Chat extends HTMLElement {
 
 /* chatbox */
 .chat${suffix} {
-  max-width: 400px;
+  max-width: 00px;
   min-height: 400px;
   background-color: #fff; 
   padding-right: 15px;
@@ -53,7 +53,7 @@ class Chat extends HTMLElement {
 
 .chat${suffix} .message-list {
   overflow-y: auto;
-  max-height: 500px;
+  max-height: 800px;
 }
 
 .chat${suffix} .message-item {
@@ -67,7 +67,6 @@ class Chat extends HTMLElement {
 }
 
 .chat${suffix} .item-primary {
-  background-color: #f6f7f8;
   color: #3c3c3e;
   margin-right: 2em;
 }
