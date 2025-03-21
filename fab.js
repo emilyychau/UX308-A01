@@ -57,6 +57,10 @@ document.querySelector("body").insertAdjacentHTML("beforeend", `
         position: absolute;
         top: -1em;
         right: 1em;
+        padding: 1em;
+        border-radius: 5px;
+        color: #fff; 
+        background-color: #521c6d; 
     }
     </style>
     <button id="fab${suffix}">Order with SMS</button>
