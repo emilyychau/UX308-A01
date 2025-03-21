@@ -40,9 +40,11 @@ const suffix = (Math.random()*100).toFixed().toString();
 document.querySelector("body").insertAdjacentHTML("beforeend", `
     <style>
     #fab${suffix}, #modal${suffix}{
-        position: absolute;
+        position: fixed;
         bottom: 1em;
         right: 1em;
+        padding: 2em;
+        background-color: #521c6d;
     }
     #clear${suffix}{
         position: absolute;
@@ -50,7 +52,7 @@ document.querySelector("body").insertAdjacentHTML("beforeend", `
         right: 1em;
     }
     </style>
-    <button id="fab${suffix}">Tell me</button>
+    <button id="fab${suffix}">Order with SMS</button>
     `);
 
 document.querySelector(`#fab${suffix}`).addEventListener("click", evt=>{
