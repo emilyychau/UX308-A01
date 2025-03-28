@@ -35,12 +35,15 @@ class Chat extends HTMLElement {
 
 /* chatbox */
 .chat${suffix} {
-  max-width: 400px;
+display: fixed;  
+max-width: 600px;
   min-height: 400px;
-  background-color: #fff; 
+  background-color: #fcfcf2; 
   padding-right: 15px;
   padding-left: 15px;button
   border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 /* messages */
@@ -48,7 +51,7 @@ class Chat extends HTMLElement {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 500px;
+  height: 800px;
 }
 
 .chat${suffix} .message-list {
