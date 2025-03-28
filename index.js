@@ -47,11 +47,11 @@ z-index: 1001;
 
 /* messages */
 .chat${suffix} .messages {
+    background-color: #fcfcf2;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: auto;
-  background-color: #fff;
 }
 
 .chat${suffix} .message-list {
