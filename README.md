@@ -13,3 +13,5 @@ You need to have at least 2 items on the menu. The menu items need to have size 
 - basic order for an item in a zip (6)
 - 2nd or 3rd item (2)
 - up-sell item (2)
+
+## View published site on [gh-pages](https://emilyychau.github.io/UX308-A01/)
