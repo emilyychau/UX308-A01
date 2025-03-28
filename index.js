@@ -94,6 +94,8 @@ z-index: 1001;
 .chat${suffix} .message-input input {
   width: 100%;
   padding: 10px;
+  bottom: 20px;
+  right: 20px;
   border-radius: 2rem;
   border: 1px solid #a5a5a5;
 }
