@@ -50,6 +50,7 @@ max-width: 600px;
   flex-direction: column;
   justify-content: space-between;
   height: 700px;
+  background-color: #fcfcf2;
 }
 
 .chat${suffix} .message-list {
