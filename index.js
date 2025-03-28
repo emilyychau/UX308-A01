@@ -51,7 +51,7 @@ max-width: 600px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 800px;
+  height: 700px;
 }
 
 .chat${suffix} .message-list {
