@@ -41,6 +41,7 @@ min-height: 400px;
 background-color: #fcfcf2; 
 padding-right: 15px;
 padding-left: 15px;button
+padding-bottom: 10px;
 border-radius: 1rem;
 z-index: 1001;
 }
