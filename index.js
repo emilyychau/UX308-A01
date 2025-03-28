@@ -35,7 +35,6 @@ class Chat extends HTMLElement {
 
 /* chatbox */
 .chat${suffix} {
-position: fixed;
 max-width: 500px;
 height: auto;
 background-color: #fcfcf2; 
@@ -48,7 +47,7 @@ z-index: 1001;
 
 /* messages */
 .chat${suffix} .messages {
-    background-color: #fcfcf2;
+    background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
