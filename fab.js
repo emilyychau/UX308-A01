@@ -55,7 +55,7 @@ document.querySelector("body").insertAdjacentHTML("beforeend", `
     }  
     #clear${suffix}{
         position: fixed;
-        top: -0.5em;
+        top: 0em;
         right: 1em;
         padding: 0.75em;
         border-radius: 5px;
