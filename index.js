@@ -70,6 +70,7 @@ z-index: 1001;
 }
 
 .chat${suffix} .item-primary {
+  background-color: fff;
   color: #3c3c3e;
   margin-right: 2em;
   font-size: 1em;
