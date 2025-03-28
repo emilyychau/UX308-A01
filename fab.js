@@ -50,8 +50,8 @@ document.querySelector("body").insertAdjacentHTML("beforeend", `
     }
      #modal${suffix}{
      position: fixed;
-     bottom: 1em;
-     right: 1em;
+     bottom: 5px;
+     right: 5px;
     }  
     #clear${suffix}{
         position: fixed;
