@@ -36,11 +36,9 @@ class Chat extends HTMLElement {
 /* chatbox */
 .chat${suffix} {
 max-width: 500px;
-height: auto;
 background-color: #fcfcf2; 
 padding-right: 15px;
 padding-left: 15px;button
-padding-bottom: 10px;
 border-radius: 1rem;
 z-index: 1001;
 }
@@ -87,7 +85,6 @@ z-index: 1001;
 .chat${suffix} .message-input {
   display: flex;
   padding-top: 10px;
-  padding-bottom: 5px;
 }
 
 .chat${suffix} .message-input input {
