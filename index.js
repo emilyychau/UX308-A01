@@ -36,20 +36,21 @@ class Chat extends HTMLElement {
 /* chatbox */
 .chat${suffix} {
 max-width: 500px;
+min-heightL 400px;
 background-color: #fcfcf2; 
 padding-right: 15px;
-padding-left: 15px;button
+padding-left: 15px; button
 border-radius: 1rem;
 z-index: 1001;
 }
 
 /* messages */
 .chat${suffix} .messages {
-    background-color: #fff;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: auto;
+  height: 500px;
 }
 
 .chat${suffix} .message-list {
@@ -68,17 +69,15 @@ z-index: 1001;
 }
 
 .chat${suffix} .item-primary {
-  background-color: fff;
+  background-color: #fff;
   color: #3c3c3e;
   margin-right: 2em;
-  font-size: 1em;
 }
 
 .chat${suffix} .item-secondary {
   background-color: #521c6d;
   color: #fff;
   margin-left: 2em;
-  font-size: 1em;
 }
 
 /* messages input */

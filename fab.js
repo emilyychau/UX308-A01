@@ -6,11 +6,11 @@ class Blur {
         this.div.id = "blurred_background";
         this.div.innerHTML = `<style>
         #blurred_background{
-            position:absolute;
-            top:0;
-            left:0;
-            height:100vh;
-            width:100vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
             backdrop-filter: blur(8px);
             z-index:1001;
         }
@@ -34,14 +34,13 @@ class Blur {
     }
 }
 
-
 const suffix = (Math.random()*100).toFixed().toString();
 
 document.querySelector("body").insertAdjacentHTML("beforeend", `
     <style>
     #fab${suffix} {
      background-color: #521c6d;    
-     position: fixed;
+     position: absolute;
      bottom: 1em;
      right: 2em;
      padding: 1em;
@@ -49,7 +48,7 @@ document.querySelector("body").insertAdjacentHTML("beforeend", `
      color: #fcfcf2
     }
      #modal${suffix}{
-     position: fixed;
+     position: absolute;
      bottom: 5px;
      right: 5px;
     }  
