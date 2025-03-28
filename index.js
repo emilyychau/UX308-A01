@@ -72,7 +72,7 @@ z-index: 1001;
 .chat${suffix} .item-primary {
   color: #3c3c3e;
   margin-right: 2em;
-  font-size: 0.5em;
+  font-size: 1em;
 }
 
 .chat${suffix} .item-secondary {
