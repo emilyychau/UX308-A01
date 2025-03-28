@@ -42,8 +42,6 @@ max-width: 600px;
   padding-right: 15px;
   padding-left: 15px;button
   border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
 }
 
 /* messages */
@@ -52,8 +50,6 @@ max-width: 600px;
   flex-direction: column;
   justify-content: space-between;
   height: 700px;
-  position: fixed;
-
 }
 
 .chat${suffix} .message-list {
