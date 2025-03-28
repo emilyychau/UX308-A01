@@ -84,6 +84,7 @@ z-index: 1001;
 .chat${suffix} .message-input {
   display: flex;
   padding-top: 10px;
+  padding-bottom: 5px;
 }
 
 .chat${suffix} .message-input input {
