@@ -49,9 +49,7 @@ document.querySelector("body").insertAdjacentHTML("beforeend", `
      color: #fcfcf2
     }
      #modal${suffix}{
-        position: fixed;
-        bottom: 1em;
-        right: 1em;
+    
     }  
     #clear${suffix}{
         position: fixed;
